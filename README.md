@@ -3,9 +3,11 @@ A 4-hour long tutorial session for learning to use LLMs and align them with cust
 
 ## 1 . Mistral 7B Prompting
 
-### Mistral 7B Introduction
+### Mistral 7B Prompting Introduction
 
-https://arxiv.org/abs/2310.06825
+Mistral 7B: https://arxiv.org/abs/2310.06825
+
+Chain of Thought Prompting: https://arxiv.org/abs/2310.04959
 
 ### Mistral 7B Code
 
@@ -19,7 +21,7 @@ https://github.com/MonikaVen/LLM-Prompting-RAG-Aligment-Training-Tutorial/blob/m
 
 ### Mistral 7B RAG Introduction 
 
-https://arxiv.org/abs/2005.11401
+RAG: https://arxiv.org/abs/2005.11401
 
 ### Mistral 7B RAG Code
 
@@ -33,7 +35,7 @@ https://github.com/MonikaVen/LLM-Prompting-RAG-Aligment-Training-Tutorial/blob/m
 
 ### Mistral 7B Align Introduction
 
-https://arxiv.org/abs/2305.14314
+QLoRA: https://arxiv.org/abs/2305.14314
 
 ### Mistral 7B Align Code
 
@@ -47,7 +49,7 @@ https://github.com/MonikaVen/LLM-Prompting-RAG-Aligment-Training-Tutorial/blob/m
 
 ### OLMO Framework Introduction
 
-https://arxiv.org/abs/2402.00838
+OLMO: https://arxiv.org/abs/2402.00838
 
 ### OLMO Framework Code
 
