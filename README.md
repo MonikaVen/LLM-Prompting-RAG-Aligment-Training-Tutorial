@@ -16,6 +16,7 @@ https://github.com/MonikaVen/LLM-Prompting-RAG-Aligment-Training-Tutorial/blob/m
 1. Load Mistral-7B model.
 2. Prompt engineering for better results.
 3. Metatags for better model performance.
+4. Chain-of-thought prompting.
 
 ## 2. Mistral 7B RAG
 
