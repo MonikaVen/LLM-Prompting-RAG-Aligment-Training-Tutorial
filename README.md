@@ -1,6 +1,9 @@
 # LLM-Prompting-RAG-Aligment-Training-Tutorial
 A 4-hour long tutorial session for learning to use LLMs and align them with custom data. We will also train a custom LLM.
 
+Slides available at:
+https://www.canva.com/design/DAGBJ2Rzgv8/ob5MPDkmOMoziqH22qtKoA/edit?utm_content=DAGBJ2Rzgv8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 ## 1 . Mistral 7B Prompting
 
 ### Mistral 7B Prompting Introduction
