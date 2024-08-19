@@ -40,6 +40,14 @@ GPT-3, introduced in 2020, has 96 transformer layers and 175 billion parameters.
 
 ## Data Preparation
 
+## Tokenization
+
+[BOS] - beginning of sequence. Marks the beginning of the text.
+[EOS] - end of sequence. Marks the ending of the text. GPT uses <|endoftext|>.
+[PAD] - padding. To ensure all the texts in a batch have the same length, the sorter ones are "padded" using the [PAD] token up to the longest text in the batch.
+
+## BPE - Byte pair encoding
+
 ## Attention Mechanism
 
 ## LLM Architecture
