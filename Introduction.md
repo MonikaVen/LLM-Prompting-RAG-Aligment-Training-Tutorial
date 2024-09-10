@@ -163,6 +163,60 @@ To dive deeper into LLMs, transformers, and related technologies, the following 
 
 ## Papers
 
-(1) Attention Is All You Need (2017) by Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin, https://arxiv.org/abs/1706.0376211
+# [1] Attention Is All You Need (2017) 
+Authors: Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin
+URL: https://arxiv.org/abs/1706.03762
+Description: This foundational paper introduced the Transformer architecture, revolutionizing NLP with its attention mechanism and eliminating the need for recurrence.
 
-(2) Improving Language Understanding by Generative Pre-Training (2018) by Radford, Narasimhan, Salimans and Sutskever, https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
+# [2] Improving Language Understanding by Generative Pre-Training (2018)
+Authors: Radford, Narasimhan, Salimans, and Sutskever
+URL: https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
+Description: This paper introduced GPT (Generative Pretrained Transformer), focusing on pretraining a generative model for downstream tasks.
+
+# [3] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2019)
+Authors: Devlin, Chang, Lee, and Toutanova
+URL: https://arxiv.org/abs/1810.04805
+Description: Introduces BERT (Bidirectional Encoder Representations from Transformers), a transformer-based model for natural language understanding with pretraining techniques like masked language modeling.
+
+# [4] Language Models are Few-Shot Learners (2020)
+Authors: Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal, Neelakantan, Shyam, Sastry, Askell, Agarwal, Herbert-Voss, Krueger, Henighan, Child, Ramesh, Ziegler, Wu, Winter, Hesse, Chen, Sigler, Litwin, Gray, Chess, Clark, Berner, McCandlish, Radford, Sutskever, and Amodei
+URL: https://arxiv.org/abs/2005.14165
+Description: Introduces GPT-3, a large-scale generative model with 175 billion parameters and the ability to perform few-shot learning.
+
+# [5] T5: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (2020)
+Authors: Raffel, Shazeer, Roberts, Lee, Narang, Matena, Zhou, Li, and Liu
+URL: https://arxiv.org/abs/1910.10683
+Description: Introduces T5 (Text-to-Text Transfer Transformer), a model that reframes all NLP tasks into a text-to-text format.
+
+# [6] Exploring the Limits of Transfer Learning with GPT-2 (2019)
+Authors: Radford, Wu, Child, Luan, Amodei, and Sutskever
+URL: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
+Description: Introduces GPT-2, demonstrating the effectiveness of large-scale language models in text generation tasks.
+
+# [7] Efficient Transformers: A Survey (2020)
+Authors: Tay, Dehghani, Bahri, and Metzler
+URL: https://arxiv.org/abs/2009.06732
+Description: A survey on various methods for improving the efficiency of transformers, covering techniques like sparse attention, low-rank factorization, and memory-efficient models.
+
+# [8] Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (2020)
+Authors: Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal, Küttler, Lewis, Yih, Rocktäschel, Riedel, and Kiela
+URL: https://arxiv.org/abs/2005.11401
+Description: Introduces Retrieval-Augmented Generation (RAG), a model that enhances generative transformers by incorporating external retrieval mechanisms.
+
+# [9] Scaling Laws for Neural Language Models (2020)
+Authors: Kaplan, McCandlish, Henighan, Brown, Chess, Child, Gray, Radford, Wu, and Amodei
+URL: https://arxiv.org/abs/2001.08361
+Description: Discusses the scaling behavior of neural language models, providing insight into how model performance improves with increased parameters, dataset size, and compute power.
+
+# [10] LLaMA: Open and Efficient Foundation Language Models (2023)
+Authors: Touvron, Lavril, Izacard, Martinet, Lachaux, Lacroix, Rozière, Goyal, Hambro, Azhar, Rodriguez, Joulin, Grave, and Lample
+URL: https://arxiv.org/abs/2302.13971
+Description: Introduces LLaMA (Large Language Model Meta AI), an open-source family of foundation language models.
+
+# [11] LoRA: Low-Rank Adaptation of Large Language Models (2021) 
+Authors: Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and Chen: This paper introduces LoRA, a method for efficient fine-tuning of large language models using low-rank adaptation.
+URL: https://arxiv.org/abs/2106.09685
+
+# [12] QLoRA: Efficient Finetuning of Quantized LLMs (2023) 
+Authors: Dettmers, Lewis, Shleifer, Zettlemoyer: This paper introduces QLoRA, a technique that enables the fine-tuning of large-scale quantized language models on a single GPU.
+URL: https://arxiv.org/abs/2305.14314
