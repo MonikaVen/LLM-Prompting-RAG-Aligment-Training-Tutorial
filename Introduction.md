@@ -36,12 +36,16 @@ BERT-large: 24 encoder layers, 340 million parameters.
 GPT - Generative Pretrained Transformer
 GPT models are auto-regressive transformers that only use the decoder part of the transformer architecture. They generate text one word at a time by predicting the next word in the sequence based on previous inputs. This form of self-supervised learning enables the model to handle diverse tasks such as text completion, summarization, and dialogue generation.
 
+https://arxiv.org/abs/1810.04805
+
 # GPT Architecture
 The GPT model is designed as an auto-regressive decoder, meaning it predicts one word at a time by incorporating previously generated words as inputs for future predictions. Its architecture is composed of multi-head attention layers and feed-forward layers, enabling it to learn complex dependencies across tokens.
 
 GPT-3: Introduced in 2020, it consists of 96 transformer layers and 175 billion parameters, making it one of the largest LLMs at the time. It supports tasks such as zero-shot and few-shot learning, where the model can generalize from minimal examples.
 
 GPT-4: A larger and more powerful successor with over 1 trillion parameters, GPT-4 expands its capabilities in generating more nuanced, contextually rich, and longer texts.
+
+https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
 
 # Building an LLM
 Building a large language model involves several steps, including data collection, preprocessing, architecture design, training, and fine-tuning.
@@ -64,6 +68,8 @@ The attention mechanism allows the model to focus on specific parts of the input
 Self-attention: Calculates attention weights between all tokens in the input, allowing the model to capture relationships between distant tokens.
 Multi-head attention: Splits the attention mechanism into multiple "heads," allowing the model to attend to different parts of the input simultaneously.
 
+https://arxiv.org/abs/1706.03762
+
 ## LLM Architecture
 LLMs typically consist of multiple layers of transformers, with each layer containing an attention mechanism and feed-forward networks. The size of the model (number of layers, attention heads, and parameters) affects its ability to capture language intricacies.
 
@@ -76,7 +82,7 @@ The training loop iterates over the data, computing the loss function and updati
 ## Model Evaluation
 Evaluating LLMs involves assessing their performance on various NLP tasks, using metrics like perplexity, BLEU score (for machine translation), or ROUGE (for summarization). More advanced models are also tested on their ability to generalize across unseen tasks.
 
-## Finetuning an LLM
+# Finetuning an LLM
 After pretraining a base model on large datasets, the next phase involves finetuning. Finetuning adapts the pretrained model to specific tasks or domains by continuing the training process on a narrower, task-specific dataset. This enables the model to excel in specialized applications such as sentiment analysis, machine translation, question-answering, or text classification.
 
 Finetuning can either be done on general NLP tasks, where the model is trained for specific tasks, or domain-specific tasks, where the model is adjusted to particular fields like law, healthcare, or coding. During finetuning, the model learns to align its language understanding and generation abilities to specific task goals, often using supervised learning.
@@ -91,6 +97,34 @@ In classification tasks, the goal is to predict predefined categories or labels 
 
 The model learns to map textual inputs to these predefined labels, often using a final softmax layer for multi-class problems. Finetuning a classifier requires task-specific datasets, like the IMDB movie reviews dataset for sentiment analysis, or AG News for topic classification. For binary classification tasks, the LLM uses datasets like Spam Detection (spam/ham emails) to predict a class with a confidence score.
 
+## Types of Finetuning
+
+### RLHF (Reinforcement Learning with Human Feedback)
+Summary: RLHF is a method to align LLMs with human preferences by fine-tuning the model using human feedback. After generating responses, human evaluators rank them based on quality. The rankings are then used to train a reward model, which guides the LLM to produce preferred outputs using reinforcement learning.
+Applications: This method has been used in models like InstructGPT and ChatGPT to make them more aligned with user instructions and expectations.
+Paper: Learning to Summarize with Human Feedback (2020) by Ziegler et al.
+arXiv link: 2009.01325
+
+### DPO (Direct Preference Optimization)
+Summary: DPO is an alternative to RLHF that simplifies the process by directly optimizing the model to align with human preferences without using a reward model. DPO modifies the standard supervised fine-tuning process by incorporating preference data where the model is trained to prefer responses with higher rankings based on human feedback.
+Applications: DPO reduces the complexity of RLHF while still achieving high alignment with human preferences.
+Paper: Direct Preference Optimization: Your Language Model is Secretly a Reward Model (2023) by Rafailov et al.
+arXiv link: 2305.18290
+
+## Memory-efficient Finetuning Techniques
+
+### LoRA (Low-Rank Adaptation of Large Language Models)
+Summary: LoRA is a parameter-efficient fine-tuning method that reduces the computational cost of training large LLMs. It introduces low-rank updates to the model's weights during fine-tuning, allowing only a small subset of the model’s parameters to be updated. This approach significantly reduces memory usage and computation while retaining high performance.
+Applications: LoRA is widely used in scenarios requiring domain-specific or task-specific fine-tuning without the need to modify the entire model.
+Paper: LoRA: Low-Rank Adaptation of Large Language Models (2021) by Hu et al.
+arXiv link: 2106.09685
+
+### QLoRA (Quantized LoRA)
+Summary: QLoRA extends LoRA by allowing efficient fine-tuning of quantized models. It uses 4-bit quantization to compress the model’s weights and then applies LoRA to perform fine-tuning. This method significantly reduces memory requirements, allowing LLMs with billions of parameters to be fine-tuned on a single GPU.
+Applications: QLoRA is ideal for developers who want to fine-tune very large models (e.g., GPT-3, LLaMA) on resource-constrained hardware while maintaining high accuracy.
+Paper: QLoRA: Efficient Finetuning of Quantized LLMs (2023) by Dettmers et al.
+arXiv link: 2305.14314
+
 # Retrieval Augmented Generation with LLM
 Retrieval-Augmented Generation (RAG) combines the strengths of retrieval-based models and generative models. Traditional LLMs generate responses based solely on the data they were trained on. However, in retrieval-augmented systems, the model first retrieves relevant information from external sources (e.g., a document database, the web) and then incorporates that information into the generation process.
 
@@ -101,6 +135,8 @@ Key components of RAG include:
 Retriever: Searches for relevant documents or passages using methods like BM25 or dense retrieval.
 Generator: Generates human-like responses based on the retrieved documents.
 By leveraging RAG, models can access external knowledge, reducing the risks of hallucination (when a model generates inaccurate or invented information) and improving response reliability in real-world applications.
+
+URL: https://arxiv.org/abs/2005.11401
 
 # Libraries that Were Used
 Several key libraries were used in building and experimenting with LLMs. These libraries provide frameworks, utilities, and tools necessary for efficient training, deployment, and interaction with LLMs.
@@ -163,60 +199,60 @@ To dive deeper into LLMs, transformers, and related technologies, the following 
 
 ## Papers
 
-# [1] Attention Is All You Need (2017) 
+### [1] Attention Is All You Need (2017) 
 Authors: Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin
 URL: https://arxiv.org/abs/1706.03762
 Description: This foundational paper introduced the Transformer architecture, revolutionizing NLP with its attention mechanism and eliminating the need for recurrence.
 
-# [2] Improving Language Understanding by Generative Pre-Training (2018)
+### [2] Improving Language Understanding by Generative Pre-Training (2018)
 Authors: Radford, Narasimhan, Salimans, and Sutskever
 URL: https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
 Description: This paper introduced GPT (Generative Pretrained Transformer), focusing on pretraining a generative model for downstream tasks.
 
-# [3] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2019)
+### [3] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2019)
 Authors: Devlin, Chang, Lee, and Toutanova
 URL: https://arxiv.org/abs/1810.04805
 Description: Introduces BERT (Bidirectional Encoder Representations from Transformers), a transformer-based model for natural language understanding with pretraining techniques like masked language modeling.
 
-# [4] Language Models are Few-Shot Learners (2020)
+### [4] Language Models are Few-Shot Learners (2020)
 Authors: Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal, Neelakantan, Shyam, Sastry, Askell, Agarwal, Herbert-Voss, Krueger, Henighan, Child, Ramesh, Ziegler, Wu, Winter, Hesse, Chen, Sigler, Litwin, Gray, Chess, Clark, Berner, McCandlish, Radford, Sutskever, and Amodei
 URL: https://arxiv.org/abs/2005.14165
 Description: Introduces GPT-3, a large-scale generative model with 175 billion parameters and the ability to perform few-shot learning.
 
-# [5] T5: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (2020)
+### [5] T5: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (2020)
 Authors: Raffel, Shazeer, Roberts, Lee, Narang, Matena, Zhou, Li, and Liu
 URL: https://arxiv.org/abs/1910.10683
 Description: Introduces T5 (Text-to-Text Transfer Transformer), a model that reframes all NLP tasks into a text-to-text format.
 
-# [6] Exploring the Limits of Transfer Learning with GPT-2 (2019)
+### [6] Exploring the Limits of Transfer Learning with GPT-2 (2019)
 Authors: Radford, Wu, Child, Luan, Amodei, and Sutskever
 URL: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
 Description: Introduces GPT-2, demonstrating the effectiveness of large-scale language models in text generation tasks.
 
-# [7] Efficient Transformers: A Survey (2020)
+### [7] Efficient Transformers: A Survey (2020)
 Authors: Tay, Dehghani, Bahri, and Metzler
 URL: https://arxiv.org/abs/2009.06732
 Description: A survey on various methods for improving the efficiency of transformers, covering techniques like sparse attention, low-rank factorization, and memory-efficient models.
 
-# [8] Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (2020)
+### [8] Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (2020)
 Authors: Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal, Küttler, Lewis, Yih, Rocktäschel, Riedel, and Kiela
 URL: https://arxiv.org/abs/2005.11401
 Description: Introduces Retrieval-Augmented Generation (RAG), a model that enhances generative transformers by incorporating external retrieval mechanisms.
 
-# [9] Scaling Laws for Neural Language Models (2020)
+### [9] Scaling Laws for Neural Language Models (2020)
 Authors: Kaplan, McCandlish, Henighan, Brown, Chess, Child, Gray, Radford, Wu, and Amodei
 URL: https://arxiv.org/abs/2001.08361
 Description: Discusses the scaling behavior of neural language models, providing insight into how model performance improves with increased parameters, dataset size, and compute power.
 
-# [10] LLaMA: Open and Efficient Foundation Language Models (2023)
+### [10] LLaMA: Open and Efficient Foundation Language Models (2023)
 Authors: Touvron, Lavril, Izacard, Martinet, Lachaux, Lacroix, Rozière, Goyal, Hambro, Azhar, Rodriguez, Joulin, Grave, and Lample
 URL: https://arxiv.org/abs/2302.13971
 Description: Introduces LLaMA (Large Language Model Meta AI), an open-source family of foundation language models.
 
-# [11] LoRA: Low-Rank Adaptation of Large Language Models (2021) 
+### [11] LoRA: Low-Rank Adaptation of Large Language Models (2021) 
 Authors: Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and Chen: This paper introduces LoRA, a method for efficient fine-tuning of large language models using low-rank adaptation.
 URL: https://arxiv.org/abs/2106.09685
 
-# [12] QLoRA: Efficient Finetuning of Quantized LLMs (2023) 
+### [12] QLoRA: Efficient Finetuning of Quantized LLMs (2023) 
 Authors: Dettmers, Lewis, Shleifer, Zettlemoyer: This paper introduces QLoRA, a technique that enables the fine-tuning of large-scale quantized language models on a single GPU.
 URL: https://arxiv.org/abs/2305.14314
