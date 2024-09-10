@@ -23,6 +23,8 @@ The Transformer architecture [1], introduced by Vaswani et al. in 2017, marked a
 
 Transformers are built on two main blocks: the encoder and the decoder. The encoder processes the input sequence and generates a series of contextual embeddings (vector representations of tokens), while the decoder uses these embeddings to generate the output sequence. This architecture forms the backbone of many modern NLP models, including BERT and GPT.
 
+https://jalammar.github.io/illustrated-transformer/
+
 # Encoder and Decoder
 Encoder: The encoder takes the input sequence (text) and converts it into a series of vectors. Each vector represents the token and its position in the sequence. The encoder consists of multiple layers of multi-head self-attention and feed-forward networks. In tasks like text classification and named entity recognition, the encoder alone is used, as seen in BERT.
 
@@ -69,6 +71,7 @@ Self-attention: Calculates attention weights between all tokens in the input, al
 Multi-head attention: Splits the attention mechanism into multiple "heads," allowing the model to attend to different parts of the input simultaneously.
 
 https://arxiv.org/abs/1706.03762
+https://nlp.seas.harvard.edu/2018/04/03/attention.html
 
 ## LLM Architecture
 LLMs typically consist of multiple layers of transformers, with each layer containing an attention mechanism and feed-forward networks. The size of the model (number of layers, attention heads, and parameters) affects its ability to capture language intricacies.
